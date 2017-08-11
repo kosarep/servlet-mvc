@@ -1,18 +1,19 @@
 package pl.kosa.model;
 
-import java.sql.Connection;
-import java.sql.Statement;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 
 /**
  * Created by JF194405 on 03.08.2017.
  */
 public class DBConnection {
-    private final static String DBURL = "jdbc:mysql://127.0.0.1:3306/login_server";
-    private final static String DBUSER = "root";
-    private final static String DBPASS = "admin";
-    private final static String DBDRIVER = "com.mysql.cj.jdbc.Driver";
+    private final  static String PERSISTENCE_UNIT_NAME = "User";
+    private EntityManagerFactory emf = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME);
+    private EntityManager em = emf.createEntityManager();
 
-    private Connection connection;
-    private Statement statement;
+    public EntityManager getEm () {
+        return em;
+    }
 
 }

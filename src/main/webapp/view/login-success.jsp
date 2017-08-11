@@ -6,9 +6,9 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@page import="pl.kosa.model.LoginBean" %>
+<%@ page import="pl.kosa.model.User" %>
 <%
-    LoginBean bean = (LoginBean) request.getAttribute("bean");
+    User bean = (User) request.getAttribute("bean");
     out.print("Welcome, " + bean.getName());
 %>
 <html>
